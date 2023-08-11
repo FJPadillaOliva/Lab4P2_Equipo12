@@ -1,6 +1,7 @@
 package lab4p2_equipo12;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -89,7 +90,39 @@ public class Lab4P2_Equipo12 {
                                 break;
                             case 2:
                                 if (listaEntrenadores.get(indiceE).getEquipo().size() != 0) {
-
+                                    System.out.println("De que lista de pokemons desea entrenar(1.Equipo/2.Caja): ");
+                                    int opcion3 = read.nextInt();
+                                    Random random = new Random();
+                                    switch(opcion3){
+                                        case 1:
+                                            System.out.println("-------------Lista de Equipo-------------");
+                                            imprimirPokemones(listaEntrenadores.get(indiceE).getEquipo());
+                                            int indiceP = read.nextInt();
+                                            if (indiceP >= 0 && indiceP < listaEntrenadores.get(indiceE).getEquipo().size()) {
+                                                int expActual = listaEntrenadores.get(indiceE).getEquipo().get(indiceP).getExpAcumulada();
+                                                int r1 = random.nextInt(2);
+                                                int r2 = random.nextInt(4999)+100;
+                                                listaEntrenadores.get(indiceE).getEquipo().get(indiceP).setExpAcumulada(expActual+(r1*r2));
+                                                System.out.println("Su Pokemon obtuvo "+expActual+(r1*r2)+" pts de experiencia en esta sesion de entrenamiento");
+                                            }
+                                            break;
+                                        case 2:
+                                            System.out.println("-------------Lista de Caja-------------");
+                                            imprimirPokemones(listaEntrenadores.get(indiceE).getCaja());
+                                            indiceP = read.nextInt();
+                                            if (indiceP >= 0 && indiceP < listaEntrenadores.get(indiceE).getCaja().size()) {
+                                                int expActual = listaEntrenadores.get(indiceE).getEquipo().get(indiceP).getExpAcumulada();
+                                                int r1 = random.nextInt(2);
+                                                int r2 = random.nextInt(4999)+100;
+                                                listaEntrenadores.get(indiceE).getCaja().get(indiceP).setExpAcumulada(expActual+(r1*r2));
+                                                System.out.println("Su Pokemon obtuvo "+expActual+(r1*r2)+" pts de experiencia en esta sesion de entrenamiento");
+                                            }
+                                            break;
+                                        default:
+                                            System.out.println("Opcion no valida");
+                                            break;
+                                    }
+                                    
                                 } else {
                                     System.out.println("Su equipo esta vacio");
                                 }
@@ -179,6 +212,14 @@ public class Lab4P2_Equipo12 {
         String lista = "";
         for (Movimiento t : listaMovimientos) {
             lista += listaMovimientos.indexOf(t) + ".-" + t + "\n";
+        }
+        System.out.println(lista);
+    }
+    
+    public static void imprimirPokemones(ArrayList<Pokemon> listaPokemones){
+        String lista = "";
+        for (Pokemon t : listaPokemones) {
+            lista += listaPokemones.indexOf(t) + ".-" + t + "\n";
         }
         System.out.println(lista);
     }
