@@ -37,6 +37,6 @@ public class AtaqueEstado extends Movimiento {
     @Override
     public String toString() {
         return "Ataque Estado\n" +
-                "Puntos de poder: " + problemaEstado;
+                "Puntos de estado: " + problemaEstado;
     } 
 }
