@@ -2,6 +2,7 @@ package lab4p2_equipo12;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Lab4P2_Equipo12 {
 
@@ -117,32 +118,39 @@ public class Lab4P2_Equipo12 {
                     }
                     switch (tipo) {
                         case 1:
+                            String problemaEstado  = "";
                             System.out.println("Ingrese el problema de estado(1.Cansancio/2.Envenenamiento/3.Paralisis/4.Quemadura)");
                             int tipoE = read.nextInt();
                             while (tipoE < 1 || tipo > 4) {
                                 System.out.println("No valido, vuelva a ingresar el tipo");
                             }
                             if (tipoE == 1) {
-                                String problemaEstado = "Dormido";
+                                problemaEstado = "Dormido";
                             } else if (tipoE == 2) {
-                                String problemaEstado = "Envenenado";
+                                problemaEstado = "Envenenado";
                             } else if (tipoE == 3) {
-                                String problemaEstado = "Paralizado";
+                                problemaEstado = "Paralizado";
                             } else if (tipoE == 4) {
-                                String problemaEstado = "Quemado";
+                                problemaEstado = "Quemado";
                             }
+                            listaMovimientos.add(new AtaqueEstado(problemaEstado, nombreM, desc));
+                            JOptionPane.showMessageDialog(null, "Movimiento agregado exitosamente");
                             break;
                         case 2:
                             System.out.println("Ingrese los puntos de poder: ");
                             int puntosPoder = read.nextInt();
                             System.out.println("Ingrese los puntos de precision: ");
                             int puntosPrecision = read.nextInt();
+                            listaMovimientos.add(new AtaqueFisico(puntosPoder, puntosPrecision, nombreM, desc));
+                            JOptionPane.showMessageDialog(null, "Movimiento agregado exitosamente");
                             break;
                         case 3:
                             System.out.println("Ingrese los puntos de poder: ");
                             puntosPoder = read.nextInt();
                             System.out.println("Ingrese los puntos de precision: ");
                             puntosPrecision = read.nextInt();
+                            listaMovimientos.add(new AtaqueEspecial(puntosPoder, puntosPrecision, nombreM, desc));
+                            JOptionPane.showMessageDialog(null, "Movimiento agregado exitosamente");
                             break;
                         default:
                             System.out.println("Opcion no valida");
