@@ -35,7 +35,121 @@ public class Lab4P2_Equipo12 {
                     System.out.println("Entrenador agregado con exito");
                     break;
                 case 2:
+                    Entrenador entrenador1;
+                    Entrenador entrenador2;
+                    Pokemon pokemon1 = new Pokemon();
+                    Pokemon pokemon2 = new Pokemon();
+                    imprimirEntrenadores(listaEntrenadores);
+                    System.out.println("Elija el primer entrenador: ");
+                    int e1 = read.nextInt();
+                    if (e1 >= 0 && e1 < listaEntrenadores.size()) {
+                        entrenador1 = listaEntrenadores.get(e1);
+                    } else {
+                        System.out.println("Fuera de rango");
+                        break;
+                    }
+                    System.out.println("Elija el segundo entrenador: ");
+                    int e2 = read.nextInt();
+                    if (e2 >= 0 && e2 < listaEntrenadores.size()) {
+                        entrenador2 = listaEntrenadores.get(e2);
+                    } else if (e2 == e1) {
+                        System.out.println("No puede elegir el mismo entrenador");
+                        break;
+                    } else {
+                        System.out.println("Fuera de rango");
+                        break;
+                    }
+                    imprimirEquipo(entrenador1);
+                    System.out.println("Elija el Pokemon para el primer entrenador: ");
+                    int p1 = read.nextInt();
+                    if (p1 >= 0 && p1 < entrenador1.getEquipo().size()) {
+                        pokemon1 = entrenador1.getEquipo().get(p1);
+                    } else {
+                        System.out.println("Fuera de rango");
+                    }
+                    imprimirEquipo(entrenador2);
+                    System.out.println("Elija el Pokemon para el segundo entrenador: ");
+                    int p2 = read.nextInt();
+                    if (p2 >= 0 && p2 < entrenador1.getEquipo().size()) {
+                        pokemon2 = entrenador1.getEquipo().get(p2);
+                    } else {
+                        System.out.println("Fuera de rango");
+                    }
+                    while (pokemon1.getHp() > 0 || pokemon2.getHp() > 0) {
+                        if (pokemon1.getSpe() >= pokemon2.getSpe()) {
+                            imprimirMovimientos(pokemon1.getListaMovimientos());
+                            int m1 = read.nextInt();
+                            while (m1 < 0 || m1 >= 4) {
+                                System.out.println("Movimiento no valido, ingreselo de nuevo: ");
+                                m1 = read.nextInt();
+                            }
+                            if (pokemon1.getListaMovimientos()[m1] instanceof AtaqueEstado) {
+                                System.out.println(pokemon1.getEspecie() + "ha inflingido "
+                                        + ((AtaqueEstado) pokemon1.getListaMovimientos()[m1]).getProblemaEstado() + "a " + pokemon2.getEspecie());
+                                pokemon1.getListaMovimientos()[m1].ataque(pokemon1, pokemon2);
+                            } else if (pokemon1.getListaMovimientos()[m1] instanceof AtaqueFisico) {
+                                System.out.println(pokemon1.getEspecie() + "ha inflingido "
+                                        + pokemon1.getListaMovimientos()[m1].ataque(pokemon1, pokemon2) + "a " + pokemon2.getEspecie());
+                            } else if (pokemon1.getListaMovimientos()[m1] instanceof AtaqueEspecial) {
+                                System.out.println(pokemon1.getEspecie() + "ha inflingido "
+                                        + pokemon1.getListaMovimientos()[m1].ataque(pokemon1, pokemon2) + "a " + pokemon2.getEspecie());
+                            }
 
+                            imprimirMovimientos(pokemon2.getListaMovimientos());
+                            int m2 = read.nextInt();
+                            while (m2 < 0 || m2 >= 4) {
+                                System.out.println("Movimiento no valido, ingreselo de nuevo: ");
+                                m2 = read.nextInt();
+                            }
+                            if (pokemon2.getListaMovimientos()[m2] instanceof AtaqueEstado) {
+                                System.out.println(pokemon2.getEspecie() + "ha inflingido "
+                                        + ((AtaqueEstado) pokemon2.getListaMovimientos()[m2]).getProblemaEstado() + "a " + pokemon1.getEspecie());
+                                pokemon2.getListaMovimientos()[m2].ataque(pokemon2, pokemon1);
+                            } else if (pokemon1.getListaMovimientos()[m2] instanceof AtaqueFisico) {
+                                System.out.println(pokemon2.getEspecie() + "ha inflingido "
+                                        + pokemon2.getListaMovimientos()[m2].ataque(pokemon2, pokemon1) + "a " + pokemon1.getEspecie());
+                            } else if (pokemon1.getListaMovimientos()[m2] instanceof AtaqueEspecial) {
+                                System.out.println(pokemon2.getEspecie() + "ha inflingido "
+                                        + pokemon2.getListaMovimientos()[m2].ataque(pokemon2, pokemon1) + "a " + pokemon1.getEspecie());
+                            }
+                        } else {
+                            imprimirMovimientos(pokemon2.getListaMovimientos());
+                            int m2 = read.nextInt();
+                            while (m2 < 0 || m2 >= 4) {
+                                System.out.println("Movimiento no valido, ingreselo de nuevo: ");
+                                m2 = read.nextInt();
+                            }
+                            if (pokemon2.getListaMovimientos()[m2] instanceof AtaqueEstado) {
+                                System.out.println(pokemon2.getEspecie() + "ha inflingido "
+                                        + ((AtaqueEstado) pokemon2.getListaMovimientos()[m2]).getProblemaEstado() + "a " + pokemon1.getEspecie());
+                                pokemon2.getListaMovimientos()[m2].ataque(pokemon2, pokemon1);
+                            } else if (pokemon1.getListaMovimientos()[m2] instanceof AtaqueFisico) {
+                                System.out.println(pokemon2.getEspecie() + "ha inflingido "
+                                        + pokemon2.getListaMovimientos()[m2].ataque(pokemon2, pokemon1) + "a " + pokemon1.getEspecie());
+                            } else if (pokemon1.getListaMovimientos()[m2] instanceof AtaqueEspecial) {
+                                System.out.println(pokemon2.getEspecie() + "ha inflingido "
+                                        + pokemon2.getListaMovimientos()[m2].ataque(pokemon2, pokemon1) + "a " + pokemon1.getEspecie());
+                            }
+
+                            imprimirMovimientos(pokemon1.getListaMovimientos());
+                            int m1 = read.nextInt();
+                            while (m1 < 0 || m1 >= 4) {
+                                System.out.println("Movimiento no valido, ingreselo de nuevo: ");
+                                m1 = read.nextInt();
+                            }
+                            if (pokemon1.getListaMovimientos()[m1] instanceof AtaqueEstado) {
+                                System.out.println(pokemon1.getEspecie() + "ha inflingido "
+                                        + ((AtaqueEstado) pokemon1.getListaMovimientos()[m1]).getProblemaEstado() + "a " + pokemon2.getEspecie());
+                                pokemon1.getListaMovimientos()[m1].ataque(pokemon1, pokemon2);
+                            } else if (pokemon1.getListaMovimientos()[m1] instanceof AtaqueFisico) {
+                                System.out.println(pokemon1.getEspecie() + "ha inflingido "
+                                        + pokemon1.getListaMovimientos()[m1].ataque(pokemon1, pokemon2) + "a " + pokemon2.getEspecie());
+                            } else if (pokemon1.getListaMovimientos()[m1] instanceof AtaqueEspecial) {
+                                System.out.println(pokemon1.getEspecie() + "ha inflingido "
+                                        + pokemon1.getListaMovimientos()[m1].ataque(pokemon1, pokemon2) + "a " + pokemon2.getEspecie());
+                            }
+                        }
+                    }
                     break;
                 case 3:
                     imprimirEntrenadores(listaEntrenadores);
@@ -93,7 +207,7 @@ public class Lab4P2_Equipo12 {
                                     System.out.println("De que lista de pokemons desea entrenar(1.Equipo/2.Caja): ");
                                     int opcion3 = read.nextInt();
                                     Random random = new Random();
-                                    switch(opcion3){
+                                    switch (opcion3) {
                                         case 1:
                                             System.out.println("-------------Lista de Equipo-------------");
                                             imprimirPokemones(listaEntrenadores.get(indiceE).getEquipo());
@@ -102,8 +216,8 @@ public class Lab4P2_Equipo12 {
                                                 int expActual = listaEntrenadores.get(indiceE).getEquipo().get(indiceP).getExpAcumulada();
                                                 int r1 = random.nextInt(2);
                                                 int r2 = 100 + random.nextInt(4999);
-                                                listaEntrenadores.get(indiceE).getEquipo().get(indiceP).setExpAcumulada(expActual+(r1*r2));
-                                                System.out.println("Su Pokemon obtuvo "+expActual+(r1*r2)+" pts de experiencia en esta sesion de entrenamiento");
+                                                listaEntrenadores.get(indiceE).getEquipo().get(indiceP).setExpAcumulada(expActual + (r1 * r2));
+                                                System.out.println("Su Pokemon obtuvo " + expActual + (r1 * r2) + " pts de experiencia en esta sesion de entrenamiento");
                                             }
                                             break;
                                         case 2:
@@ -114,15 +228,15 @@ public class Lab4P2_Equipo12 {
                                                 int expActual = listaEntrenadores.get(indiceE).getEquipo().get(indiceP).getExpAcumulada();
                                                 int r1 = random.nextInt(2);
                                                 int r2 = 100 + random.nextInt(4999);
-                                                listaEntrenadores.get(indiceE).getCaja().get(indiceP).setExpAcumulada(expActual+(r1*r2));
-                                                System.out.println("Su Pokemon obtuvo "+expActual+(r1*r2)+" pts de experiencia en esta sesion de entrenamiento");
+                                                listaEntrenadores.get(indiceE).getCaja().get(indiceP).setExpAcumulada(expActual + (r1 * r2));
+                                                System.out.println("Su Pokemon obtuvo " + expActual + (r1 * r2) + " pts de experiencia en esta sesion de entrenamiento");
                                             }
                                             break;
                                         default:
                                             System.out.println("Opcion no valida");
                                             break;
                                     }
-                                    
+
                                 } else {
                                     System.out.println("Su equipo esta vacio");
                                 }
@@ -151,7 +265,7 @@ public class Lab4P2_Equipo12 {
                     }
                     switch (tipo) {
                         case 1:
-                            String problemaEstado  = "";
+                            String problemaEstado = "";
                             System.out.println("Ingrese el problema de estado(1.Cansancio/2.Envenenamiento/3.Paralisis/4.Quemadura)");
                             int tipoE = read.nextInt();
                             while (tipoE < 1 || tipo > 4) {
@@ -215,11 +329,28 @@ public class Lab4P2_Equipo12 {
         }
         System.out.println(lista);
     }
-    
-    public static void imprimirPokemones(ArrayList<Pokemon> listaPokemones){
+
+    public static void imprimirPokemones(ArrayList<Pokemon> listaPokemones) {
         String lista = "";
         for (Pokemon t : listaPokemones) {
             lista += listaPokemones.indexOf(t) + ".-" + t + "\n";
+        }
+        System.out.println(lista);
+    }
+
+    public static void imprimirEquipo(Entrenador entrenador) {
+        String lista = "";
+        ArrayList<Pokemon> equipo = entrenador.getEquipo();
+        for (Pokemon t : equipo) {
+            lista += equipo.indexOf(t) + ".-" + t + "\n";
+        }
+        System.out.println(lista);
+    }
+
+    public static void imprimirMovimientos(Movimiento[] listaM) {
+        String lista = "";
+        for (int i = 0; i <= 3; i++) {
+            lista += i + ".-" + listaM[i] + "\n";
         }
         System.out.println(lista);
     }
