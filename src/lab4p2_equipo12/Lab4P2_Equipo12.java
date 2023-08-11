@@ -66,7 +66,7 @@ public class Lab4P2_Equipo12 {
                                     System.out.println("Elija los movimientos para su Pokemon: ");
                                     imprimirMovimientos(listaMovimientos);
                                     Movimiento[] listaM = new Movimiento[6];
-                                    for (int i = 0; i < 3; i++) {
+                                    for (int i = 0; i <= 3; i++) {
                                         System.out.println("Seleccione el movimiento a agregar: ");
                                         int opcion3 = read.nextInt();
                                         while (opcion3 < 0 && opcion3 >= listaMovimientos.size()) {
