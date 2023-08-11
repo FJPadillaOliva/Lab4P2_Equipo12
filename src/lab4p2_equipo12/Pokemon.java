@@ -13,7 +13,7 @@ public class Pokemon {
     private Movimiento[] listaMovimientos = new Movimiento[4];
     private String estado;
 
-    public Pokemon(String especie, int nivel, int expAcumulada, int expToLevelUp, int hp, int atk, int def, int sp, int spe, String estado) {
+    public Pokemon(String especie, int nivel, int expAcumulada, int expToLevelUp, int hp, int atk, int def, int sp, int spe, String estado,Movimiento[] listaMovimientos) {
         this.especie = especie;
         this.nivel = nivel;
         this.expAcumulada = expAcumulada;
@@ -24,6 +24,7 @@ public class Pokemon {
         this.sp = sp;
         this.spe = spe;
         this.estado = estado;
+        this.listaMovimientos = listaMovimientos;
     }
 
     public String getEspecie() {
