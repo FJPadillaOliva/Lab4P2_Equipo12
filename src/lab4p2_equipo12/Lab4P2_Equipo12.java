@@ -124,21 +124,25 @@ public class Lab4P2_Equipo12 {
                             }
                             if (tipoE == 1) {
                                 String problemaEstado = "Dormido";
-                            }else if (tipoE == 2){
+                            } else if (tipoE == 2) {
                                 String problemaEstado = "Envenenado";
-                            }else if (tipoE == 3){
+                            } else if (tipoE == 3) {
                                 String problemaEstado = "Paralizado";
-                            }else if (tipoE == 4){
+                            } else if (tipoE == 4) {
                                 String problemaEstado = "Quemado";
                             }
                             break;
                         case 2:
                             System.out.println("Ingrese los puntos de poder: ");
+                            int puntosPoder = read.nextInt();
                             System.out.println("Ingrese los puntos de precision: ");
                             int puntosPrecision = read.nextInt();
                             break;
                         case 3:
-
+                            System.out.println("Ingrese los puntos de poder: ");
+                            puntosPoder = read.nextInt();
+                            System.out.println("Ingrese los puntos de precision: ");
+                            puntosPrecision = read.nextInt();
                             break;
                         default:
                             System.out.println("Opcion no valida");
