@@ -101,7 +101,7 @@ public class Lab4P2_Equipo12 {
                                             if (indiceP >= 0 && indiceP < listaEntrenadores.get(indiceE).getEquipo().size()) {
                                                 int expActual = listaEntrenadores.get(indiceE).getEquipo().get(indiceP).getExpAcumulada();
                                                 int r1 = random.nextInt(2);
-                                                int r2 = random.nextInt(4999)+100;
+                                                int r2 = 100 + random.nextInt(4999);
                                                 listaEntrenadores.get(indiceE).getEquipo().get(indiceP).setExpAcumulada(expActual+(r1*r2));
                                                 System.out.println("Su Pokemon obtuvo "+expActual+(r1*r2)+" pts de experiencia en esta sesion de entrenamiento");
                                             }
@@ -113,7 +113,7 @@ public class Lab4P2_Equipo12 {
                                             if (indiceP >= 0 && indiceP < listaEntrenadores.get(indiceE).getCaja().size()) {
                                                 int expActual = listaEntrenadores.get(indiceE).getEquipo().get(indiceP).getExpAcumulada();
                                                 int r1 = random.nextInt(2);
-                                                int r2 = random.nextInt(4999)+100;
+                                                int r2 = 100 + random.nextInt(4999);
                                                 listaEntrenadores.get(indiceE).getCaja().get(indiceP).setExpAcumulada(expActual+(r1*r2));
                                                 System.out.println("Su Pokemon obtuvo "+expActual+(r1*r2)+" pts de experiencia en esta sesion de entrenamiento");
                                             }
