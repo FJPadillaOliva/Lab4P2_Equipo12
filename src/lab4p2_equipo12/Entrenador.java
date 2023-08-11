@@ -11,6 +11,12 @@ public class Entrenador {
     public Entrenador() {
     }
 
+    public Entrenador(String nombre, int edad, int dinero) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.dinero = dinero;
+    }
+
     public Entrenador(String nombre, int edad, int dinero, ArrayList<Pokemon> equipo, ArrayList<Pokemon> caja) {
         this.nombre = nombre;
         this.edad = edad;

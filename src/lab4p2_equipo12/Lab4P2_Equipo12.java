@@ -1,5 +1,6 @@
 package lab4p2_equipo12;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab4P2_Equipo12 {
@@ -8,6 +9,7 @@ public class Lab4P2_Equipo12 {
 
     public static void main(String[] args) {
         int opcion = 0;
+        ArrayList<Entrenador> listaEntrenadores = new ArrayList();
         do {
             System.out.println("----------Menu----------\n"
                     + "1.Registrar Entrenador\n"
@@ -18,7 +20,15 @@ public class Lab4P2_Equipo12 {
             opcion = read.nextInt();
             switch(opcion){
                 case 1:
-                    
+                    System.out.println("Ingrese el nombre del entrenador: ");
+                    read.nextLine();
+                    String nombre = read.nextLine();
+                    read = new Scanner(System.in);
+                    System.out.println("Ingrese la edad del entrenador: ");
+                    int edad = read.nextInt();
+                    System.out.println("Ingrese la cantidad de dinero del entrenador: ");
+                    int dinero = read.nextInt();
+                    listaEntrenadores.add(new Entrenador(nombre, edad, dinero));
                     break;
                 case 2:
                     
