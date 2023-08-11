@@ -26,7 +26,10 @@ public class AtaqueEspecial extends Movimiento {
         this.puntosPrecision = puntosPrecision;
     }
     
-    
+    @Override
+    public int ataque() {
+        return 0;
+    }
 
     @Override
     public String toString() {

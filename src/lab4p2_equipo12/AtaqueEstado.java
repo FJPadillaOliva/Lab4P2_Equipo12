@@ -16,7 +16,10 @@ public class AtaqueEstado extends Movimiento {
         this.problemaEstado = problemaEstado;
     }
 
-    
+    @Override
+    public int ataque() {
+        return 0;
+    }
 
     @Override
     public String toString() {
