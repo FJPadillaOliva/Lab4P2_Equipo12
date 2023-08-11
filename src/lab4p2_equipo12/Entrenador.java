@@ -1,18 +1,17 @@
 package lab4p2_equipo12;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Entrenador {   
     private String nombre;
     private int edad;
     private int dinero;
-    private List<Pokemon> equipo;
-    private List<Pokemon> caja;
-
+    private ArrayList<Pokemon> equipo = new ArrayList();
+    private ArrayList<Pokemon> caja = new ArrayList();
     public Entrenador() {
     }
 
-    public Entrenador(String nombre, int edad, int dinero, List<Pokemon> equipo, List<Pokemon> caja) {
+    public Entrenador(String nombre, int edad, int dinero, ArrayList<Pokemon> equipo, ArrayList<Pokemon> caja) {
         this.nombre = nombre;
         this.edad = edad;
         this.dinero = dinero;
@@ -44,19 +43,19 @@ public class Entrenador {
         this.dinero = dinero;
     }
 
-    public List<Pokemon> getEquipo() {
+    public ArrayList<Pokemon> getEquipo() {
         return equipo;
     }
 
-    public void setEquipo(List<Pokemon> equipo) {
+    public void setEquipo(ArrayList<Pokemon> equipo) {
         this.equipo = equipo;
     }
 
-    public List<Pokemon> getCaja() {
+    public ArrayList<Pokemon> getCaja() {
         return caja;
     }
 
-    public void setCaja(List<Pokemon> caja) {
+    public void setCaja(ArrayList<Pokemon> caja) {
         this.caja = caja;
     }
 

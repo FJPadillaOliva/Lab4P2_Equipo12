@@ -18,6 +18,7 @@ public class AtaqueEstado extends Movimiento {
 
     @Override
     public int ataque() {
+        
         return 0;
     }
 
