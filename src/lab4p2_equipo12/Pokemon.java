@@ -117,17 +117,17 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return "Pokemon{" + 
-                "especie=" + especie + 
-                ", nivel=" + nivel + 
-                ", expAcumulada=" + expAcumulada + 
-                ", expToLevelUp=" + expToLevelUp + 
-                ", hp=" + hp + 
-                ", atk=" + atk + 
-                ", def=" + def + 
-                ", sp=" + sp + 
-                ", spe=" + spe + 
-                ", listaMovimientos=" + listaMovimientos + 
-                ", estado=" + estado;
-    }   
+        return "Pokemon\n" +
+                "Especie: " + especie + "\n" +
+                "Nivel: " + nivel + "\n" +
+                "Experiencia acumulada: " + expAcumulada + "\n" +
+                "Experiencia para subir de nivel: " + expToLevelUp + "\n" +
+                "Puntos de vida: " + hp + "\n" +
+                "Ataque: " + atk + "\n" +
+                "Defensa: " + def + "\n" +
+                "Ataque especial: " + sp + "\n" +
+                "Velocidad especial: " + spe + "\n" +
+                "Lista de movimientos: " + listaMovimientos + "\n" +
+                "Estado: " + estado;
+    }  
 }

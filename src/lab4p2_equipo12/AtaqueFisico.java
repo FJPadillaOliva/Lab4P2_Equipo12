@@ -1,5 +1,7 @@
 package lab4p2_equipo12;
 
+import java.util.Random;
+
 public class AtaqueFisico extends Movimiento {
     private int puntosPoder;
     private int puntosPrecision;
@@ -27,14 +29,28 @@ public class AtaqueFisico extends Movimiento {
     }
 
     @Override
-    public int ataque() {
-        return 0;
+    public int ataque(Pokemon atacante, Pokemon rival) {
+        Random rand = new Random();
+        int random = rand.nextInt(50) + 1;
+        int damage;
+
+        if (atacante.getAtk() > rival.getDef()) {
+            damage = random * 2;
+        } else if (atacante.getAtk() < rival.getDef()) {
+            damage = (int) (random * 0.5);
+        } else {
+            damage = random;
+        }
+
+        rival.setHp(rival.getHp() - damage);
+
+        return damage;
     }
 
     @Override
     public String toString() {
-        return "AtaqueFisico{" + 
-                "puntosPoder=" + puntosPoder + 
-                ", puntosPrecision=" + puntosPrecision;
-    }
+        return "Ataque Fisico\n" +
+                "Puntos de poder: " + puntosPoder + "\n" +
+                "Puntos de precisión: " + puntosPrecision;
+    } 
 }

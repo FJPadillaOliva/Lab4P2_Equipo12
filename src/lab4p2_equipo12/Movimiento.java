@@ -28,12 +28,12 @@ public abstract class Movimiento {
         this.descripcion = descripcion;
     }
 
-    public abstract int ataque();
+    public abstract int ataque(Pokemon atacante, Pokemon rival);
     
     @Override
     public String toString() {
-        return "Movimiento" + 
-                "nombre=" + nombre + 
-                ", descripcion=" + descripcion;
-    }  
+        return "Movimiento\n" +
+                "Nombre: " + nombre + "\n" +
+                "Descripción: " + descripcion;
+    } 
 }

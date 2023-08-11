@@ -67,13 +67,11 @@ public class Entrenador {
 
     @Override
     public String toString() {
-        return "Entrenador{" + 
-                "nombre=" + nombre + 
-                ", edad=" + edad + 
-                ", dinero=" + dinero + 
-                ", equipo=" + equipo + 
-                ", caja=" + caja;
+        return "Entrenador\n" +
+                "Nombre: " + nombre + "\n" +
+                "Edad: " + edad + "\n" +
+                "Dinero: " + dinero + "\n" +
+                "Equipo: " + equipo + "\n" +
+                "Caja: " + caja;
     }
-    
-    
 }
