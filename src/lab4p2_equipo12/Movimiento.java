@@ -1,6 +1,6 @@
 package lab4p2_equipo12;
 
-public abstract class Movimiento {
+public class Movimiento {
     private String nombre;
     private String descripcion;
 
@@ -28,7 +28,7 @@ public abstract class Movimiento {
         this.descripcion = descripcion;
     }
 
-    public abstract int ataque();
+    
     
     @Override
     public String toString() {
