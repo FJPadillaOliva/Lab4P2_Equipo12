@@ -130,7 +130,15 @@ public class Pokemon {
                 "Defensa: " + def + "\n" +
                 "Ataque especial: " + sp + "\n" +
                 "Velocidad especial: " + spe + "\n" +
-                "Lista de movimientos: " + listaMovimientos + "\n" +
+                "Lista de movimientos: " + listaM() + "\n" +
                 "Estado: " + estado;
     }  
+    
+    public String listaM(){
+        String lista = "";
+        for (int i = 0; i <= 3; i++) {
+            lista += i+".-"+listaMovimientos[i]+", ";
+        }
+        return lista;
+    }
 }
