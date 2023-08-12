@@ -285,7 +285,7 @@ public class Lab4P2_Equipo12 {
                                 problemaEstado = "Quemado";
                             }
                             listaMovimientos.add(new AtaqueEstado(problemaEstado, nombreM, desc));
-                            JOptionPane.showMessageDialog(null, "Movimiento agregado exitosamente");
+                            System.out.println("Movimiento agregado con exito");
                             break;
                         case 2:
                             System.out.println("Ingrese los puntos de poder: ");
@@ -293,7 +293,7 @@ public class Lab4P2_Equipo12 {
                             System.out.println("Ingrese los puntos de precision: ");
                             int puntosPrecision = read.nextInt();
                             listaMovimientos.add(new AtaqueFisico(puntosPoder, puntosPrecision, nombreM, desc));
-                            JOptionPane.showMessageDialog(null, "Movimiento agregado exitosamente");
+                            System.out.println("Movimiento agregado con exito");
                             break;
                         case 3:
                             System.out.println("Ingrese los puntos de poder: ");
@@ -301,7 +301,7 @@ public class Lab4P2_Equipo12 {
                             System.out.println("Ingrese los puntos de precision: ");
                             puntosPrecision = read.nextInt();
                             listaMovimientos.add(new AtaqueEspecial(puntosPoder, puntosPrecision, nombreM, desc));
-                            JOptionPane.showMessageDialog(null, "Movimiento agregado exitosamente");
+                            System.out.println("Movimiento agregado con exito");
                             break;
                         default:
                             System.out.println("Opcion no valida");
